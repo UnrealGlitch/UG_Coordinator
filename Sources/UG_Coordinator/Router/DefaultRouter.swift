@@ -41,4 +41,16 @@ extension DefaultRouter: Router {
         rootController.popViewController(animated: animated)
     }
     
+    public func present(_ module: Presentable?, animated: Bool) {
+        guard let controller = module?.toPresent(), (controller is UINavigationController == false) else {
+            assertionFailure("WARNING: [DefaultRouter.push]: Deprecated push UINavigationController")
+            return
+        }
+        rootController.present(controller, animated: animated)
+    }
+    
+    public func dismiss(animated: Bool) {
+        rootController.dismiss(animated: animated)
+    }
+    
 }
