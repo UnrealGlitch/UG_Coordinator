@@ -5,7 +5,9 @@
 //  Created by Andrey Goryunov on 03.09.2021.
 //
 
-open class BaseCoordinator: Coordinator {
+import Foundation
+
+open class BaseCoordinator: NSObject, Coordinator {
     
     // MARK: - Public properties
     
@@ -17,7 +19,7 @@ open class BaseCoordinator: Coordinator {
     
     // MARK: - Public life cycle
     
-    public init() {
+    public override init() {
         
     }
     
